@@ -1,13 +1,21 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16A201w" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="HelveticaNeue.ttc">
+            <string>HelveticaNeue</string>
+            <string>HelveticaNeue-Bold</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Multiples" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +23,76 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="chalkboard" translatesAutoresizingMaskIntoConstraints="NO" id="t1V-b0-J9o">
+                                <rect key="frame" x="-7" y="0.0" width="615" height="600"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Dodawanie" translatesAutoresizingMaskIntoConstraints="NO" id="60W-sh-TUk" userLabel="Logo Img">
+                                <rect key="frame" x="136" y="53" width="343" height="83"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v5a-gV-7xH" userLabel="Play Btn">
+                                <rect key="frame" x="231" y="343" width="139" height="60"/>
+                                <state key="normal" image="graj"/>
+                                <connections>
+                                    <action selector="onAddBtnTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mD6-Ax-1b7"/>
+                                    <action selector="onPlayBtnTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1Ts-GE-fPo"/>
+                                </connections>
+                            </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0 + 5 = 5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m39-sB-fni">
+                                <rect key="frame" x="195" y="176" width="225" height="70"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="50"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </label>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d5b-vh-mBi" userLabel="Add Btn">
+                                <rect key="frame" x="224" y="363" width="153" height="71"/>
+                                <state key="normal" image="dodaj"/>
+                                <connections>
+                                    <action selector="onAddBtnTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HYh-Qv-5ws"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Jaką liczbę chcesz dodać?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Eun-7y-v7C" userLabel="Jaka liczba Txt">
+                                <rect key="frame" x="188" y="285" width="225" height="30"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Eun-7y-v7C" firstAttribute="centerX" secondItem="t1V-b0-J9o" secondAttribute="centerX" id="2f7-VG-U7Y"/>
+                            <constraint firstItem="Eun-7y-v7C" firstAttribute="top" secondItem="60W-sh-TUk" secondAttribute="bottom" constant="149" id="4hP-01-woh"/>
+                            <constraint firstItem="v5a-gV-7xH" firstAttribute="top" secondItem="Eun-7y-v7C" secondAttribute="bottom" constant="28" id="4p2-37-Rfm"/>
+                            <constraint firstItem="60W-sh-TUk" firstAttribute="centerX" secondItem="t1V-b0-J9o" secondAttribute="centerX" id="5jp-FV-MGW"/>
+                            <constraint firstItem="60W-sh-TUk" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="33" id="9S9-1f-JBw"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="60W-sh-TUk" secondAttribute="trailing" constant="101" id="IBI-Cb-hda"/>
+                            <constraint firstItem="m39-sB-fni" firstAttribute="top" secondItem="60W-sh-TUk" secondAttribute="bottom" constant="40" id="IpS-nb-5zL"/>
+                            <constraint firstItem="60W-sh-TUk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="RK6-Lw-4UM"/>
+                            <constraint firstItem="60W-sh-TUk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="V90-i5-REa"/>
+                            <constraint firstItem="d5b-vh-mBi" firstAttribute="top" secondItem="Eun-7y-v7C" secondAttribute="bottom" constant="48" id="YXp-7R-q2x"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="60W-sh-TUk" secondAttribute="trailing" constant="20" id="fWY-cd-3T2"/>
+                            <constraint firstItem="v5a-gV-7xH" firstAttribute="centerX" secondItem="t1V-b0-J9o" secondAttribute="centerX" id="lca-xS-Uc8"/>
+                            <constraint firstItem="m39-sB-fni" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lwh-j9-skF"/>
+                            <constraint firstItem="d5b-vh-mBi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mIm-dz-5Q3"/>
+                            <constraint firstItem="60W-sh-TUk" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="33" id="uTN-mW-WGz"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="addBtn" destination="d5b-vh-mBi" id="Alb-ky-xSs"/>
+                        <outlet property="logoImg" destination="60W-sh-TUk" id="IiM-UG-ewo"/>
+                        <outlet property="playBtn" destination="v5a-gV-7xH" id="Pxv-Xz-Oab"/>
+                        <outlet property="sumLbl" destination="m39-sB-fni" id="Hjg-0z-hmf"/>
+                        <outlet property="whatMultipleTxt" destination="Eun-7y-v7C" id="LOe-4t-iU0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="569" y="-75"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Dodawanie" width="486" height="79"/>
+        <image name="chalkboard" width="801" height="750"/>
+        <image name="dodaj" width="153" height="71"/>
+        <image name="graj" width="139" height="60"/>
+    </resources>
 </document>
